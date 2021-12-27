@@ -1,9 +1,8 @@
 const ffmpeg = require("fluent-ffmpeg");
 const path = require("path");
-
 const video = path.join(__dirname, "./videos/video.mp4");
 
-// // mute audio of video
+// mute audio of video
 ffmpeg(video)
   .noAudio()
   .output(path.join(__dirname, "./videos/video-no-audio.mp4"))
@@ -12,7 +11,7 @@ ffmpeg(video)
   })
   .run();
 
-// // change resolution of video
+// change resolution of video
 ffmpeg(video)
   .size("320x240")
   .output(path.join(__dirname, "./videos/video-320x240.mp4"))
@@ -21,7 +20,7 @@ ffmpeg(video)
   })
   .run();
 
-// // change quality of video
+ // change quality of video
 ffmpeg(video)
   .outputOptions(["-qscale:v", "8"])
   .output(path.join(__dirname, "./videos/video-qscale-2.mp4"))
